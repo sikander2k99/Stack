@@ -1,0 +1,28 @@
+class Solution
+{
+    public:
+    //Function to delete middle element of a stack.
+    void deleteMid(stack<int>&s, int sizeOfStack)
+    {
+        vector<int> h;
+        vector<int> v;
+      while(!s.empty()){
+      v.push_back (s.top());
+      s.pop();
+      }
+    int n=v.size();
+    if(n%2==0){
+      int target=(n/2);
+      for(int i=n-1;i>=0;i--){
+        if(i==target)continue;
+        s.push(v[i]);
+      }
+    }else{
+      int target=ceil(n/2); 
+      for(int i=n-1;i>=0;i--){
+        if(i==target)continue;
+        s.push(v[i]);
+      }
+    }
+    
+    }
